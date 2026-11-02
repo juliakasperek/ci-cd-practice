@@ -1,0 +1,17 @@
+[project]
+name = "converter"
+version = "0.1.0"
+description = "A tiny unit converter for practising CI/CD"
+requires-python = ">=3.9"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+# E/F: common errors, I: import order, B: likely bugs
+select = ["E", "F", "I", "B"]
