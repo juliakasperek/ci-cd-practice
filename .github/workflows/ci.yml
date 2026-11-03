@@ -10,4 +10,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements-dev.txt
-      - run: pytest
+      - name: Run tests
+        run: pytest
+      - name: Run linter
+        run: ruff check
