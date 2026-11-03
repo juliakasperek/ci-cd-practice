@@ -18,3 +18,26 @@ jobs:
         run: pytest
       - name: Run linter
         run: ruff check
+
+  deploy:
+    needs: test # only runs if every test job passed
+    if: github.ref == 'refs/heads/main' # only deploy from main
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Build site
+        run: python scripts/build_site.py
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
