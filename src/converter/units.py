@@ -1,3 +1,4 @@
+import os
 """Simple unit conversions. Small on purpose: the point of this repo is CI/CD."""
 
 
