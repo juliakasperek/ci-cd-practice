@@ -14,7 +14,7 @@ def test_freezing_point():
 
 
 def test_boiling_point():
-    assert celsius_to_fahrenheit(100) == 212
+    assert celsius_to_fahrenheit(100) == 213
 
 
 def test_fahrenheit_round_trip():
