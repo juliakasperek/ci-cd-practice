@@ -5,8 +5,8 @@ from converter import (
     fahrenheit_to_celsius,
     kg_to_lb,
     km_to_miles,
-    miles_to_km,
     lb_to_kg,
+    miles_to_km,
 )
 
 
@@ -38,14 +38,13 @@ def test_negative_distance_rejected():
 def test_kg_to_lb():
     assert kg_to_lb(1) == pytest.approx(2.20462)
 
-
 def test_negative_weight_rejected():
     with pytest.raises(ValueError):
         kg_to_lb(-5)
 
 def test_negative_weight():
     with pytest.raises(ValueError):
-        kg_to_lb(-10)
+        lb_to_kg(-10)
 
 def test_weight_conversion():
-    assert lb_to_kg(5) == pytest.approx(11.0231131)
+    assert lb_to_kg(5) == pytest.approx(2.267965)

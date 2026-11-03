@@ -30,4 +30,4 @@ def kg_to_lb(kg: float) -> float:
 def lb_to_kg(lb: float) -> float:
     if lb < 0:
         raise ValueError("weight can't be negative")
-    return lb * 2.20462262
+    return lb / 2.20462
