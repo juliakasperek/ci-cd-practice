@@ -6,6 +6,7 @@ from converter import (
     kg_to_lb,
     km_to_miles,
     miles_to_km,
+    lb_to_kg,
 )
 
 
@@ -14,7 +15,7 @@ def test_freezing_point():
 
 
 def test_boiling_point():
-    assert celsius_to_fahrenheit(100) == 213
+    assert celsius_to_fahrenheit(100) == 212
 
 
 def test_fahrenheit_round_trip():
@@ -42,5 +43,9 @@ def test_negative_weight_rejected():
     with pytest.raises(ValueError):
         kg_to_lb(-5)
 
+def test_negative_weight():
+    with pytest.raises(ValueError):
+        kg_to_lb(-10)
 
-# EXERCISE (Level 1): add tests for lb_to_kg here.
+def test_weight_conversion():
+    assert lb_to_kg(5) == pytest.approx(11.0231131)

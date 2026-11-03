@@ -28,6 +28,6 @@ def kg_to_lb(kg: float) -> float:
 
 
 def lb_to_kg(lb: float) -> float:
-    # EXERCISE (Level 1): implement this, then write tests for it in
-    # tests/test_units.py. Copy the style of the kg_to_lb tests.
-    raise NotImplementedError
+    if lb < 0:
+        raise ValueError("weight can't be negative")
+    return lb * 2.20462262
