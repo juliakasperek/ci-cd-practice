@@ -10,7 +10,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
-from converter import celsius_to_fahrenheit, km_to_miles  # noqa: E402
+from converter import celsius_to_fahrenheit, kg_to_lb, km_to_miles  # noqa: E402
 
 OUT = Path(__file__).resolve().parent.parent / "site"
 
@@ -41,6 +41,8 @@ def main() -> None:
 <table>{rows([-10, 0, 20, 37, 100], celsius_to_fahrenheit, "°C", "°F")}</table>
 <h2>Distance</h2>
 <table>{rows([1, 5, 10, 21.1, 42.2], km_to_miles, "km", "mi")}</table>
+<h2>Weight</h2>
+<table>{rows([10, 0, 20, 37, 100], kg_to_lb, "kg", "lb")}</table>
 <footer>Deployed automatically by GitHub Actions · built {built}</footer>
 </body>
 </html>
