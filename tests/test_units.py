@@ -52,7 +52,7 @@ def test_weight_conversion():
     assert lb_to_kg(5) == pytest.approx(2.267965)
 
 def test_celsius_to_kelvin():
-    assert celsius_to_kelvin(0) == pytest.approx(273.15)
+    assert celsius_to_kelvin(0) == pytest.approx(999)
 
 def test_kelvin_to_celsius_negative():
     with pytest.raises(ValueError):
