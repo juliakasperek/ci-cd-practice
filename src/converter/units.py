@@ -31,3 +31,12 @@ def lb_to_kg(lb: float) -> float:
     if lb < 0:
         raise ValueError("weight can't be negative")
     return lb / 2.20462
+
+def celsius_to_kelvin(celsius:float ) -> float:
+    return celsius + 273.15
+
+def kelvin_to_celsius(kelvin: float) -> float:
+    if kelvin < 0:
+        raise ValueError("Kelvin cannot be negative")
+    return kelvin - 273.15
+

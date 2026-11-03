@@ -2,7 +2,9 @@ import pytest
 
 from converter import (
     celsius_to_fahrenheit,
+    celsius_to_kelvin,
     fahrenheit_to_celsius,
+    kelvin_to_celsius,
     kg_to_lb,
     km_to_miles,
     lb_to_kg,
@@ -48,3 +50,14 @@ def test_negative_weight():
 
 def test_weight_conversion():
     assert lb_to_kg(5) == pytest.approx(2.267965)
+
+def test_celsius_to_kelvin():
+    assert celsius_to_kelvin(0) == pytest.approx(273.15)
+
+def test_kelvin_to_celsius_negative():
+    with pytest.raises(ValueError):
+        kelvin_to_celsius(-1)
+
+def test_kelvin_to_celsius():
+    assert kelvin_to_celsius(0) == pytest.approx(-273.15)
+
